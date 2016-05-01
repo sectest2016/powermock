@@ -1,0 +1,36 @@
+rootProject.name = "powermock"
+
+include("reflect")
+include("core")
+include("api")
+include("api:support")
+include("api:easymock")
+include("api:mockito-common")
+include("api:mockito")
+include("api:mockito2")
+include("tests")
+include("tests:utils")
+include("classloading")
+include("classloading:classloading-base")
+include("classloading:classloading-objenesis")
+include("classloading:classloading-xstream")
+
+addPrefixToProject(rootProject)
+
+def addPrefixToProject(ProjectDescriptor project){
+    if (project.parent){
+        addPrefixToProjectName(project)
+    }
+    project.children.each {subproject ->
+        addPrefixToProject(subproject)
+    }
+}
+
+def addPrefixToProjectName(ProjectDescriptor project){
+    def projectName = project.name
+    if (projectName.contains("classloading-")){
+        def x = "classloading-".length()
+        projectName = projectName.substring(x,projectName.length())
+    }
+    project.name = project.parent.name + "-" + projectName
+}
