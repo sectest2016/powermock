@@ -17,9 +17,12 @@ package samples.powermockito.junit4.whennew;
 
 import org.junit.Rule;
 import org.junit.Test;
+<<<<<<< HEAD:modules/module-test/mockito/junit4/src/test/java/samples/powermockito/junit4/whennew/WhenNewCases.java
+import org.junit.rules.ExpectedException;
+=======
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.junit.rules.ExpectedException;
+>>>>>>> Finish gradle migration for building project. next step create release.:modules/module-test/mockito/junit4-delegate/src/test/java/powermock/modules/test/mockito/junit4/delegate/WhenNewCases.java
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.modules.junit4.PowerMockRunnerDelegate;
@@ -61,7 +64,13 @@ import static org.powermock.api.support.membermodification.MemberMatcher.constru
 /**
  * Test class to demonstrate new instance mocking using whenConstructionOf(..).
  */
+<<<<<<< HEAD:modules/module-test/mockito/junit4/src/test/java/samples/powermockito/junit4/whennew/WhenNewCases.java
 @PrepareForTest({MyClass.class, ExpectNewDemo.class, DataInputStream.class, WhenNewCases.class, Target.class})
+=======
+@RunWith(PowerMockRunner.class)
+@PowerMockRunnerDelegate(MockitoJUnitRunner.class)
+@PrepareForTest({MyClass.class, ExpectNewDemo.class, DataInputStream.class})
+>>>>>>> Finish gradle migration for building project. next step create release.:modules/module-test/mockito/junit4-delegate/src/test/java/powermock/modules/test/mockito/junit4/delegate/WhenNewCases.java
 public class WhenNewCases {
 
     public static final String TARGET_NAME = "MyTarget";
