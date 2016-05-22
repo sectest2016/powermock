@@ -231,8 +231,8 @@ final class Frame {
      */
     static final int[] SIZE;
 
-    /**
-     * Computes the stack size variation corresponding to each JVM instruction.
+    /*
+      Computes the stack size variation corresponding to each JVM instruction.
      */
     static {
         int i;

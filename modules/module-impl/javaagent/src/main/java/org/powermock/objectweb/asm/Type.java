@@ -231,7 +231,7 @@ public class Type {
 
     /**
      * Returns the Java type corresponding to the given method descriptor.
-     * Equivalent to <code>Type.getType(methodDescriptor)</code>.
+     * Equivalent to {@code Type.getType(methodDescriptor)}.
      * 
      * @param methodDescriptor
      *            a method descriptor.

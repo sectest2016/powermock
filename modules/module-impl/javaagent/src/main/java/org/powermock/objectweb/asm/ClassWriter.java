@@ -508,8 +508,8 @@ public class ClassWriter extends ClassVisitor {
     // Static initializer
     // ------------------------------------------------------------------------
 
-    /**
-     * Computes the instruction types of JVM opcodes.
+    /*
+      Computes the instruction types of JVM opcodes.
      */
     static {
         int i;
@@ -597,7 +597,7 @@ public class ClassWriter extends ClassVisitor {
     // ------------------------------------------------------------------------
 
     /**
-     * Constructs a new {@link ClassWriter} object.
+     * Constructs a new  object.
      * 
      * @param flags
      *            option flags that can be used to modify the default behavior
@@ -619,7 +619,7 @@ public class ClassWriter extends ClassVisitor {
     }
 
     /**
-     * Constructs a new {@link ClassWriter} object and enables optimizations for
+     * Constructs a new  object and enables optimizations for
      * "mostly add" bytecode transformations. These optimizations are the
      * following:
      * 
@@ -633,7 +633,7 @@ public class ClassWriter extends ClassVisitor {
      * events for all the method instructions), which saves a <i>lot</i> of
      * time. Untransformed methods are detected by the fact that the
      * {@link ClassReader} receives {@link MethodVisitor} objects that come from
-     * a {@link ClassWriter} (and not from any other {@link ClassVisitor}
+     * a  (and not from any other {@link ClassVisitor}
      * instance).</li>
      * </ul>
      * 

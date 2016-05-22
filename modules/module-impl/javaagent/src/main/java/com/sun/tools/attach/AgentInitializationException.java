@@ -35,7 +35,7 @@ package com.sun.tools.attach;
  * methods if an agent, or agent library, cannot be initialized.
  * When thrown by <tt>VirtualMachine.loadAgentLibrary</tt>, or
  * <tt>VirtualMachine.loadAgentPath</tt> then the exception encapsulates
- * the error returned by the agent's <code>Agent_OnAttach</code> function.
+ * the error returned by the agent's {@code Agent_OnAttach} function.
  * This error code can be obtained by invoking the {@link #returnValue() returnValue} method.
  */
 public final class AgentInitializationException extends Exception
@@ -45,7 +45,7 @@ public final class AgentInitializationException extends Exception
    private final int returnValue;
 
    /**
-    * Constructs an <code>AgentInitializationException</code> with
+    * Constructs an {@code AgentInitializationException} with
     * no detail message.
     */
    public AgentInitializationException()
@@ -54,7 +54,7 @@ public final class AgentInitializationException extends Exception
    }
 
    /**
-    * Constructs an <code>AgentInitializationException</code> with the specified detail message.
+    * Constructs an {@code AgentInitializationException} with the specified detail message.
     *
     * @param s the detail message.
     */
@@ -65,9 +65,9 @@ public final class AgentInitializationException extends Exception
    }
 
    /**
-    * Constructs an <code>AgentInitializationException</code> with
+    * Constructs an {@code AgentInitializationException} with
     * the specified detail message and the return value from the
-    * execution of the agent's <code>Agent_OnAttach</code> function.
+    * execution of the agent's {@code Agent_OnAttach} function.
     *
     * @param s           the detail message.
     * @param returnValue the return value
@@ -80,8 +80,8 @@ public final class AgentInitializationException extends Exception
 
    /**
     * If the exception was created with the return value from the agent
-    * <code>Agent_OnAttach</code> function then this returns that value,
-    * otherwise returns <code>0</code>. </p>
+    * {@code Agent_OnAttach} function then this returns that value,
+    * otherwise returns {@code 0}. </p>
     */
    public int returnValue()
    {

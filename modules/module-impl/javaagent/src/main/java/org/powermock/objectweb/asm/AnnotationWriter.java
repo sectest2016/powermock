@@ -88,7 +88,7 @@ final class AnnotationWriter extends AnnotationVisitor {
     // ------------------------------------------------------------------------
 
     /**
-     * Constructs a new {@link AnnotationWriter}.
+     * Constructs a new .
      * 
      * @param cw
      *            the class writer to which this annotation must be added.

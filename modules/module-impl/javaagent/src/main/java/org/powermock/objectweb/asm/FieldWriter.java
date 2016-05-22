@@ -101,7 +101,7 @@ final class FieldWriter extends FieldVisitor {
     // ------------------------------------------------------------------------
 
     /**
-     * Constructs a new {@link FieldWriter}.
+     * Constructs a new .
      * 
      * @param cw
      *            the class writer to which this field must be added.

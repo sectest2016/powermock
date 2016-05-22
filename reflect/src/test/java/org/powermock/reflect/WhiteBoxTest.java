@@ -16,7 +16,6 @@
 package org.powermock.reflect;
 
 import org.junit.Ignore;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.powermock.reflect.context.ClassFieldsNotInTargetContext;

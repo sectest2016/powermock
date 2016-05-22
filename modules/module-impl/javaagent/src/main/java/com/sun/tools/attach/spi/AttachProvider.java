@@ -111,7 +111,7 @@ public abstract class AttachProvider
     * that does not exist, or it corresponds to a Java virtual machine that does not support
     * the attach mechanism implemented by this provider, or it detects that the
     * Java virtual machine is a version to which this provider cannot attach, then
-    * an <code>AttachNotSupportedException</code> is thrown. </p>
+    * an {@code AttachNotSupportedException} is thrown. </p>
     *
     * @param id The abstract identifier that identifies the Java virtual machine.
     * @return VirtualMachine representing the target virtual machine.
@@ -124,7 +124,7 @@ public abstract class AttachProvider
     *                                     corresponds to a Java virtual machine which this
     *                                     provider cannot attach.
     * @throws IOException                 If some other I/O error occurs
-    * @throws NullPointerException        If <code>id</code> is <code>null</code>
+    * @throws NullPointerException        If {@code id} is {@code null}
     */
    public abstract VirtualMachine attachVirtualMachine(String id)
       throws AttachNotSupportedException, IOException;
@@ -150,7 +150,7 @@ public abstract class AttachProvider
     *                                     returns a provider that is not this provider, or it does not correspond
     *                                     to a Java virtual machine to which this provider can attach.
     * @throws IOException                 If some other I/O error occurs
-    * @throws NullPointerException        If <code>vmd</code> is <code>null</code>
+    * @throws NullPointerException        If {@code vmd} is {@code null}
     */
    public VirtualMachine attachVirtualMachine(VirtualMachineDescriptor vmd)
       throws AttachNotSupportedException, IOException
@@ -166,7 +166,7 @@ public abstract class AttachProvider
     * Lists the Java virtual machines known to this provider.
     * <p/>
     * This method returns a list of {@link com.sun.tools.attach.VirtualMachineDescriptor} elements.
-    * Each <code>VirtualMachineDescriptor</code> describes a Java virtual machine
+    * Each {@code VirtualMachineDescriptor} describes a Java virtual machine
     * to which this provider can <i>potentially</i> attach.  There isn't any
     * guarantee that invoking {@link #attachVirtualMachine(VirtualMachineDescriptor)
     * attachVirtualMachine} on each descriptor in the list will succeed.

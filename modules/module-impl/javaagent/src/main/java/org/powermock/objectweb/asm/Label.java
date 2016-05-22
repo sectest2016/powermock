@@ -111,7 +111,7 @@ public class Label {
      * Field used to associate user information to a label. Warning: this field
      * is used by the ASM tree package. In order to use it with the ASM tree
      * package you must override the
-     * {@link org.objectweb.asm.tree.MethodNode#getLabelNode} method.
+     * {@link jdk.internal.org.objectweb.asm.tree.MethodNode#getLabelNode} method.
      */
     public Object info;
 
@@ -158,7 +158,7 @@ public class Label {
      * indicates if this reference uses 2 or 4 bytes, and its absolute value
      * gives the position of the bytecode instruction. This array is also used
      * as a bitset to store the subroutines to which a basic block belongs. This
-     * information is needed in {@linked MethodWriter#visitMaxs}, after all
+     * information is needed in {@link MethodWriter#visitMaxs}, after all
      * forward references have been resolved. Hence the same array can be used
      * for both purposes without problems.
      */

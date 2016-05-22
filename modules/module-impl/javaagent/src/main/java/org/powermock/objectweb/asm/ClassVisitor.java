@@ -54,7 +54,7 @@ public abstract class ClassVisitor {
     protected ClassVisitor cv;
 
     /**
-     * Constructs a new {@link ClassVisitor}.
+     * Constructs a new .
      * 
      * @param api
      *            the ASM API version implemented by this visitor. Must be one
@@ -65,7 +65,7 @@ public abstract class ClassVisitor {
     }
 
     /**
-     * Constructs a new {@link ClassVisitor}.
+     * Constructs a new .
      * 
      * @param api
      *            the ASM API version implemented by this visitor. Must be one

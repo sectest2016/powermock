@@ -38,7 +38,7 @@ public final class AgentLoadException extends Exception
    private static final long serialVersionUID = 688047862952114238L;
 
    /**
-    * Constructs an <code>AgentLoadException</code> with
+    * Constructs an {@code AgentLoadException} with
     * no detail message.
     */
    public AgentLoadException()
@@ -46,7 +46,7 @@ public final class AgentLoadException extends Exception
    }
 
    /**
-    * Constructs an <code>AgentLoadException</code> with the specified detail message.
+    * Constructs an {@code AgentLoadException} with the specified detail message.
     */
    public AgentLoadException(String s)
    {
