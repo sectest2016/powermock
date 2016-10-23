@@ -6,6 +6,8 @@ project("powermock-reflect") {
         compile("org.objenesis:objenesis")
         testCompile("junit:junit")
         testCompile("org.hamcrest:hamcrest-core")
+        testCompile("org.assertj:assertj-core")
+        testCompile("cglib:cglib-nodep")
     }
 }
 
@@ -26,6 +28,7 @@ project("powermock-core") {
         testCompile("junit:junit")
         testCompile("org.assertj:assertj-core")
         testCompile("org.hamcrest:hamcrest-core")
+        testCompile("org.mockito:mockito-core:${mockito1Version}")
 
         provided("org.mockito:mockito-core:${mockito1Version}")
         mockito2("org.mockito:mockito-core:${mockito2Version}")
@@ -346,7 +349,12 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-testng"
     }
 }
 
-List easymock = ["org.easymock:easymock","org.assertj:assertj-core",project(":powermock-api:powermock-api-easymock"),project(":powermock-tests:powermock-tests-utils")]
+List easymock = [
+        "org.easymock:easymock",
+        "org.assertj:assertj-core",
+        project(":powermock-api:powermock-api-easymock"),
+        project(":powermock-tests:powermock-tests-utils")
+]
 
 project(":powermock-modules:powermock-modules-test:powermock-module-test-easymock:powermock-module-test-easymock-junit3"){
     description = "Tests for EasyMock module with JUnit 3.x."
@@ -418,6 +426,7 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-easymoc
         testCompile(project(":powermock-modules:powermock-modules-impl:powermock-module-junit4")){
             exclude group: 'junit', module: 'junit'
         }
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-easymock:powermock-module-test-easymock-junit4").sourceSets.test.output)
     }
 
     test{
@@ -435,6 +444,7 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-easymoc
         testCompile(project(":powermock-modules:powermock-modules-impl:powermock-module-junit4")){
             exclude group: 'junit', module: 'junit'
         }
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-easymock:powermock-module-test-easymock-junit4").sourceSets.test.output)
     }
 }
 
@@ -448,6 +458,7 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-easymoc
         testCompile(project(":powermock-modules:powermock-modules-impl:powermock-module-junit4")){
             exclude group: 'junit', module: 'junit'
         }
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-easymock:powermock-module-test-easymock-junit4").sourceSets.test.output)
     }
 }
 
@@ -461,6 +472,7 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-easymoc
         testCompile(project(":powermock-modules:powermock-modules-impl:powermock-module-junit4")){
             exclude group: 'junit', module: 'junit'
         }
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-easymock:powermock-module-test-easymock-junit4").sourceSets.test.output)
     }
 }
 
@@ -474,6 +486,7 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-easymoc
         testCompile(project(":powermock-modules:powermock-modules-impl:powermock-module-junit4")){
             exclude group: 'junit', module: 'junit'
         }
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-easymock:powermock-module-test-easymock-junit4").sourceSets.test.output)
     }
 }
 
@@ -539,6 +552,10 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito
         mockito2 project(path:":powermock-api:powermock-api-mockito-common", configuration: "mockito2")
     }
 
+    test{
+        exclude "**/*Cases*"
+    }
+
     check.dependsOn mockito2Test
 }
 
@@ -572,6 +589,8 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito
         testCompile project(path:":powermock-api:powermock-api-mockito-common")
         mockito2 mockito2Lbs
         mockito2 project(path:":powermock-api:powermock-api-mockito-common", configuration: "mockito2")
+
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito:powermock-module-test-mockito-junit4").sourceSets.test.output)
     }
 
     check.dependsOn mockito2Test
@@ -588,6 +607,8 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito
         testCompile project(path:":powermock-api:powermock-api-mockito-common")
         mockito2 mockito2Lbs
         mockito2 project(path:":powermock-api:powermock-api-mockito-common", configuration: "mockito2")
+
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito:powermock-module-test-mockito-junit4").sourceSets.test.output)
     }
 
     check.dependsOn mockito2Test
@@ -602,6 +623,9 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito
         testCompile project(":powermock-modules:powermock-modules-impl:powermock-module-junit4-rule-agent")
         testCompile mockito1Libs
         testCompile project(path:":powermock-api:powermock-api-mockito-common")
+
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito:powermock-module-test-mockito-junit4").sourceSets.test.output)
+
         mockito2 mockito2Lbs
         mockito2 project(path:":powermock-api:powermock-api-mockito-common", configuration: "mockito2")
     }
@@ -631,6 +655,7 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito
         mockito2 mockito2Lbs
         mockito2 project(path:":powermock-api:powermock-api-mockito-common", configuration: "mockito2")
 
+        testCompile files(project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito:powermock-module-test-mockito-junit4").sourceSets.test.output)
     }
 
     test{
