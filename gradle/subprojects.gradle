@@ -546,7 +546,7 @@ project(":powermock-modules:powermock-modules-test:powermock-module-test-mockito
         testCompile project(":powermock-modules:powermock-modules-impl:powermock-module-junit4")
         testCompile mockito1Libs
         testCompile project(path:":powermock-api:powermock-api-mockito-common")
-        testCompile "org.jacoco:org.jacoco.core:0.7.5.20150524194"
+        testCompile "org.jacoco:org.jacoco.core:0.7.7.201606060606'"
         testCompile "org.eclipse.jdt:core:3.3.0-v_771"
         mockito2 mockito2Lbs
         mockito2 project(path:":powermock-api:powermock-api-mockito-common", configuration: "mockito2")
